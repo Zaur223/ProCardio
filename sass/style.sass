@@ -13,7 +13,7 @@ $main-color: #C70101
     padding: 21px 0 93px 0
 
 .container
-    max-width: 940px
+    max-width: 950px
 
 header
     display: flex
@@ -103,6 +103,318 @@ header
     a
         color: #fff
 
+.advantages
+    max-height: 473px
+    padding: 73px 0 65px 0
 
+.label
+    color: #0D0D0D
+    text-align: center
+    font-size: 30px
+    font-weight: 700
+    text-transform: uppercase
 
+.advantages_wrapper
+    display: flex
+    justify-content: space-around
+    padding-top: 60px
+
+.advantage
+    width: 269px
+    &_icon
+        display: block
+        margin: 0 auto
+    &_title
+        padding-top: 30px
+        color: #0D0D0D
+        text-align: center
+        font-size: 18px
+        font-weight: 700
+    &_descr
+        padding-top: 20px
+        color: #0D0D0D
+        text-align: center
+        font-size: 14px
+        font-weight: 300
+        a
+            color: $main-color
+
+.consultation
+    padding: 102px 0 108px 0
+    min-height: 680px
+    background: url('../img/bg2.jpg') center center/cover no-repeat
+    &_label
+        color: #fff
+        text-align: left
+        font-size: 36px
+    &_descr
+        margin-top: 12px
+        color: #FFF
+        font-size: 20px
+        font-weight: 500
     
+.feed_form
+    margin-top: 36px
+    display: flex
+    flex-direction: column
+    input
+        border-radius: 5px
+        border: none
+        margin-bottom: 12px
+        width: 303px
+        height: 54px
+        padding-left: 20px
+        color: #4B4B4B
+        font-size: 14px
+        font-weight: 400
+        &:nth-child(3)
+            margin-bottom: 30px
+
+.consultation_button
+    width: 303px
+    height: 58px
+    color: #FFF
+    font-size: 16px
+    font-weight: 500
+    text-transform: uppercase
+
+.slider
+    min-height: 742px
+    padding: 108px 0 107px 0
+
+.slider_block
+    width: 750px
+    height: 593px
+    overflow: hidden
+    margin: 0 auto
+
+.slider_line
+    width: 2250px
+    height: 527px
+    display: flex
+    align-items: center
+    position: relative
+    left: 0
+    transition: 1s all
+    img
+        width: 750px
+        height: 527px
+
+.slider_container
+    position: relative
+
+.btn_next
+    background-color: #fff
+    width: 50px
+    height: 50px
+    position: absolute
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    border: none
+
+.btn_prev
+    background-color: #fff
+    width: 50px
+    height: 50px
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    border: none
+
+.chevron
+    font-size: 50px
+    color: $main-color
+
+.catalog 
+    padding-bottom: 80px
+
+.title
+    text-align: center
+    color: #0D0D0D
+    text-align: center
+    font-size: 30px
+    font-weight: 400
+    text-transform: uppercase
+
+.catalog__tabs
+    padding-top: 46px
+    list-style-type: none
+    display: flex
+    justify-content: center
+    margin-bottom: 0
+    padding-left: 0
+    
+.catalog__tab
+    margin: 0 5px
+    width: 222px
+    height: 52px
+    border: 2px solid #d0d0d0
+    color: #6B6B6B
+    text-align: center
+    font-size: 18px
+    font-weight: 400
+    text-transform: uppercase
+    line-height: 48px
+    transform: skew(-25deg)
+    cursor: pointer
+    transition: 0.5s all
+    div
+        transform: skew(25deg)
+    &_active
+        color: #fff
+        background-color: $main-color
+        border: none
+    &:hover
+        box-shadow: 3px 3px 20px $main-color
+
+.catalog__content
+    margin-top: 57px
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+.catalog-item
+    margin-bottom: 10px
+    padding: 20px 20px 26px 20px
+    border: 2px solid #E8E8E8
+    width: 303px
+    min-height: 442px
+    overflow: hidden
+    hr
+        margin-top: 17px
+    &__img
+        display: block
+        margin: 0 auto
+        max-width: 100%
+        height: 200px
+    &__subtitle
+        margin-top: 15px
+        color: #0D0D0D
+        text-align: center
+        font-size: 16px
+        font-weight: 700
+    &__descr
+        margin-top: 15px
+        color: #0D0D0D
+        text-align: center
+        font-size: 14px
+        font-weight: 300
+    &__next
+        display: block
+        margin-top: 10px
+        color: #C70101
+        text-align: center
+        font-size: 14px
+        font-weight: 500
+        text-decoration-line: underline
+        cursor: pointer
+    &__footer
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: 17px
+    &__old__price
+        color: #555
+        font-size: 14px
+        font-weight: 300
+    &__price
+        color: #050505
+        font-size: 20px
+        font-weight: 700
+    &__btn
+        width: 135px
+        height: 44px
+        border-radius: 5px
+        border: none
+        background-color: $main-color
+        color: #fff
+
+.catalog-item__wrapper
+    display: flex
+    width: calc(200% + 40px)
+
+.catalog-item__content
+    margin-right: 0
+    width: 50%
+    transform: translateX(-100%)
+    transition: 0.5s all
+    &_active
+        transform: translateX(0%)
+        margin-right: 20px
+
+.catalog-item__list
+    position: relative
+    width: 50%
+    margin-left: 20px
+    transform: translateX(0%)
+    padding-right: 20px
+    transition: 0.5s all
+    padding-left: 19px
+    margin-bottom: 0
+    list-style-type: none
+    &_active
+        transform: translateX(-100%)
+        margin-left: 0
+    li
+        position: relative
+        color: #555
+        font-size: 14px
+        font-weight: 300
+        margin-bottom: 20px
+        &:before
+            content: ''
+            position: absolute
+            width: 5px
+            height: 5px
+            background-color: $main-color
+            left: -14px
+            top: 7px
+
+.catalog-item__prev
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(calc(-50% - 17px))
+    display: block
+    margin-top: 10px
+    color: #C70101
+    text-align: center
+    font-size: 14px
+    font-weight: 500
+    text-decoration-line: underline
+    cursor: pointer
+
+.reviews
+    min-height: 920px
+    &_label
+        color: #0D0D0D
+        text-align: center
+        font-size: 30px
+        font-weight: 700
+        text-transform: uppercase
+
+.review
+    display: flex
+    margin-top: 60px
+    &_title
+        margin: 0
+        color: #0D0D0D
+        font-size: 18px
+        font-weight: 700
+    &_subtitle
+        color: #646464
+        font-size: 14px
+        font-weight: 500
+    &_photo
+        width: 169px
+        height: 169px
+        margin-right: 61px
+    &_descr
+        margin-top: 10px
+        color: #0D0D0D
+        font-size: 16px
+        font-weight: 300
+
+
