@@ -1,5 +1,5 @@
 $main-color: #C70101
-    
+   
 *
     box-sizing: border-box
     margin: 0
@@ -124,6 +124,7 @@ header
     &_icon
         display: block
         margin: 0 auto
+        background-color: #fff
     &_title
         padding-top: 30px
         color: #0D0D0D
@@ -212,6 +213,7 @@ header
     top: 50%
     transform: translateY(-50%)
     border: none
+    z-index: 5
 
 .btn_prev
     background-color: #fff
@@ -222,6 +224,7 @@ header
     top: 50%
     transform: translateY(-50%)
     border: none
+    z-index: 5
 
 .chevron
     font-size: 50px
@@ -270,10 +273,13 @@ header
         box-shadow: 3px 3px 20px $main-color
 
 .catalog__content
+    postition: relative
     margin-top: 57px
-    display: flex
+    display: none
     justify-content: space-between
     flex-wrap: wrap
+    &_active
+        display: flex
 
 .catalog-item
     margin-bottom: 10px
@@ -330,6 +336,24 @@ header
         border: none
         background-color: $main-color
         color: #fff
+    &__cart
+        position: absolute
+        top: 0 
+        right: 0
+        width: 35px
+        height: 35px
+        background-color: #fff
+        text-align: center
+        line-height: 43px
+        border: 2px solid #e3e3e3
+        border-radius: 100%
+        cursor: pointer
+        &:hover
+            background-color: #e3e3e3
+            
+
+.cart_outline 
+    font-size: 22px
 
 .catalog-item__wrapper
     display: flex
@@ -416,5 +440,102 @@ header
         color: #0D0D0D
         font-size: 16px
         font-weight: 300
+
+.footer
+    height: 630px
+    margin-top: 48px
+    position: relative
+    &_info
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 460px
+        min-height: 270px
+        background-color: $main-color
+        text-align: center
+        padding: 50px 53px 56px 54px
+    &_addr
+        color: #FFF
+        font-size: 20px
+        font-weight: 500
+    &_phone
+        color: #FFF
+        font-size: 20px
+        font-weight: 700
+    &__social
+        display: flex
+        justify-content: center
+        gap: 17px
+        margin-top: 30px
+    &__social_block
+        border: 2px solid #fff
+        border-radius: 50%
+        padding: 10px
+
+.overlay
+    display: none
+    position: fixed
+    width: 100%
+    height: 100%
+    top: 0
+    background-color: rgba(0, 0, 0, 0.56)
+
+.modal_block
+    position: absolute
+    background-color: #F2F2F2
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 382px
+    min-height: 402px
+    padding: 35px 40px 40px 40px
+.modal_subtitle
+    color: #0D0D0D
+    text-align: center
+    font-size: 19px
+    font-weight: 700
+.modal_descr
+    color: #0D0D0D
+    text-align: center
+    font-size: 14px
+    font-weight: 700
+.modal_close
+    position: absolute
+    top: 0 
+    right: -50px
+    font-size: 58px
+    line-height: 21px
+    color: $main-color
+    cursor: pointer
+.feed_form_modal
+    margin-top: 26px
+
+.modal_block_mini
+    min-height: 143px
+
+.modal_block_consultation_hidden 
+    display: none
+.modal_block_order_hidden 
+    display: none
+.modal_block_mini_hidden
+    display: none
+
+
+.button_up
+    display: none
+    position: fixed
+    bottom: 50px
+    right: 80px
+    border-radius: 100%
+    width: 50px
+    height: 50px
+    cursor: pointer
+
+.arrow_up
+    width: 100%
+    height: 100%
+    color: $main-color
+
 
 
