@@ -422,6 +422,7 @@ header
 .review
     display: flex
     margin-top: 60px
+    transition: transform 1s, opacity 1s
     &_title
         margin: 0
         color: #0D0D0D
@@ -440,6 +441,9 @@ header
         color: #0D0D0D
         font-size: 16px
         font-weight: 300
+    &_hidden
+        opacity: 0
+        transform: translateY(9rem)
 
 .footer
     height: 630px

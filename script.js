@@ -21,11 +21,16 @@ const modalConsultation = document.querySelector('.modal_block_consultation')
 const modalOrder = document.querySelector('.modal_block_order')
 const modalMini = document.querySelector('.modal_block_mini')
 const catalogItemBtn = document.querySelectorAll('.catalog-item__btn')
-const modalBtn = document.querySelectorAll('.consultation_button')
+const consultationBtnMain = document.querySelector('.consultation_button_main')
 
 const scrollLink = document.querySelector('.promo_link')
 const btnUp = document.querySelector('.button_up')
 const consultation = document.querySelector('.consultation')
+
+const reviews = document.querySelectorAll('.review')
+
+const inputElements = document.querySelectorAll('input')
+
 
 
 slideNext.addEventListener('click', function() {
@@ -145,15 +150,39 @@ catalogItemBtn.forEach(btn => {
     })
 })
 
+
 document.addEventListener('click', function(e) {
-    if(e.target.closest('.consultation_button') && e.target.closest('.modal_block_consultation')) {
-        e.preventDefault()
-        modalOrder.style.display = 'none'
-        modalConsultation.style.display = 'none'
-        overlay.style.display = 'block'
-        modalMini.style.display = 'block'
+    if(e.target.classList.contains('consultation_button') && e.target.closest('.modal_block_consultation')) {
+        const inputInConsultation = e.target.closest('.modal_block_consultation').querySelectorAll('input');
+        const allInputFilled = [...inputInConsultation].every(input => input.value.trim() !== '');
+
+        if(allInputFilled) {
+            e.preventDefault()
+            modalOrder.style.display = 'none'
+            modalConsultation.style.display = 'none'
+            overlay.style.display = 'block'
+            modalMini.style.display = 'block'
+
+            inputInConsultation.forEach(input => input.value = '')
+        }
     }
 
+})
+
+consultationBtnMain.addEventListener('click', function(e) {
+    if(e.target.closest('.form_consultation')) {
+        const inputInConsultation = e.target.closest('.form_consultation').querySelectorAll('input');
+        const allInputFilled = [...inputInConsultation].every(input => input.value.trim() !== '');
+
+        if(allInputFilled) {
+            e.preventDefault()
+            overlay.style.display = 'block';
+            modalMini.style.display = 'block';
+
+            inputInConsultation.forEach(input => input.value = '')
+        }
+
+    }
 })
 
 ////////////////////////////////// scrolling //////////////////////////////////////
@@ -184,4 +213,24 @@ btnUp.addEventListener('click', function(e) {
         top: 0,
         behavior: 'smooth'
     })
+})
+
+
+///////////////////////////////// Intersection Observer API //////////////////////////////////////
+
+const appearancrReview = function(entries, observer) {
+    const entry = entries[0]
+    if(!entry.isIntersecting) return;
+    entry.target.classList.remove('review_hidden')
+    observer.unobserve(entry.target);
+}
+
+const reviewObserver = new IntersectionObserver(appearancrReview, {
+    root: null,
+    threshold: 0.2,
+})
+
+reviews.forEach(function(review) {
+    reviewObserver.observe(review)
+    review.classList.add('review_hidden')
 })
