@@ -104,7 +104,7 @@ header
         color: #fff
 
 .advantages
-    max-height: 473px
+    min-height: 473px
     padding: 73px 0 65px 0
 
 .label
@@ -183,53 +183,20 @@ header
     min-height: 742px
     padding: 108px 0 107px 0
 
-.slider_block
+.swiper
     width: 750px
     height: 593px
-    overflow: hidden
-    margin: 0 auto
-
-.slider_line
-    width: 2250px
-    height: 527px
-    display: flex
-    align-items: center
-    position: relative
-    left: 0
-    transition: 1s all
-    img
+    &-slide 
         width: 750px
-        height: 527px
-
-.slider_container
-    position: relative
-
-.btn_next
-    background-color: #fff
-    width: 50px
-    height: 50px
-    position: absolute
-    right: 0
-    top: 50%
-    transform: translateY(-50%)
-    border: none
-    z-index: 5
-
-.btn_prev
-    background-color: #fff
-    width: 50px
-    height: 50px
-    position: absolute
-    left: 0
-    top: 50%
-    transform: translateY(-50%)
-    border: none
-    z-index: 5
-
-.chevron
-    font-size: 50px
-    color: $main-color
-
+        height: 593px
+        display: flex
+        align-items: center
+        z-index: 1
+    &-button-prev
+        color: $main-color
+    &-button-next
+        color: $main-color
+        
 .catalog 
     padding-bottom: 80px
 
@@ -484,6 +451,7 @@ header
     height: 100%
     top: 0
     background-color: rgba(0, 0, 0, 0.56)
+    z-index: 5
 
 .modal_block
     position: absolute
@@ -529,17 +497,21 @@ header
 .button_up
     display: none
     position: fixed
-    bottom: 50px
-    right: 80px
+    bottom: 117px
+    right: 20px
     border-radius: 100%
     width: 50px
     height: 50px
+    z-index: 5
     cursor: pointer
 
 .arrow_up
     width: 100%
     height: 100%
     color: $main-color
+
+
+@import "media"
 
 
 

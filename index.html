@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RunSmart</title>
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.min.css">
     <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -92,15 +94,19 @@
     </section>
 
     <section class="slider">
-        <div class="container slider_container">
-            <div class="slider_block">
-                <button class="btn_prev"><ion-icon class="chevron" name="chevron-back-outline"></ion-icon></button>
-                <div class="slider_line">
-                    <img src="img/Слайд №1.png" alt="">
-                    <img src="img/Слайд №2.png" alt="">
-                    <img src="img/Слайд №3.png" alt="">
+        <div class="container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/Слайд №1.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Слайд №2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Слайд №3.png" alt=""></div>
                 </div>
-                <button class="btn_next"><ion-icon class="chevron" name="chevron-forward-outline"></ion-icon></button>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                
+                <div class="swiper-scrollbar"></div>
             </div>
         </div>
     </section>
@@ -457,7 +463,7 @@
             <div class="modal_subtitle">Спасибо за вашу заявку!</div>
             <div class="modal_descr">Наш менеджер свяжется с вами в ближайшее время!</div>
         </div>
-    </div>
+   </div> 
 
     <div class="button_up"><ion-icon class="arrow_up" name="arrow-up-circle-outline"></ion-icon></div>
 </body>

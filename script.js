@@ -33,21 +33,29 @@ const inputElements = document.querySelectorAll('input')
 
 
 
-slideNext.addEventListener('click', function() {
-    position += 750
-    if(position > 1500) {
-        position = 0
-    }
-    sliderLine.style.left = -position + 'px'
-})
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
 
-slidePrev.addEventListener('click', function() {
-    position -= 750
-    if(position < 0) {
-        position = 1500
-    }
-    sliderLine.style.left = -position + 'px'
-})
+  });
 
 
 
